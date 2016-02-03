@@ -16,34 +16,23 @@ public class ListUtilitiesSorted {
 			} else if (newNode.getInt() < startOfList.getInt()) {
 						newNode.setNextIntegerNode(startOfList);
 						startOfList = newNode; 
-						
 			} else	{
 				
 				IntegerNode temp = startOfList;
 				boolean finished = false;
 				
 				while (temp.getNextIntegerNode() != null && !finished) {
-
 					if (newNode.getInt() < temp.getNextIntegerNode().getInt()) {
-						
 						newNode.setNextIntegerNode(temp.getNextIntegerNode());
 						temp.setNextIntegerNode(newNode);
 						finished = true;
-
-
 					} else {
-
 						temp = temp.getNextIntegerNode();
 					}
-				
 				}
-
 				temp.setNextIntegerNode(newNode);
 			}
-			}
-		
-
-
+		}
 	}
 
 	public void printList() {
