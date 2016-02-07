@@ -10,6 +10,9 @@ void insert(Person person);
 */
 Person retrieve();
 
-
+/**
+* checks if queue is empty
+*/
+boolean isEmpty();
 
 }

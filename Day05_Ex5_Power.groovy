@@ -8,7 +8,7 @@
 
 int pow(int b, int e) {
 
-if (e ==0) {
+if (e == 0) {
 	return 1
 } else  {
 	return b * pow(b,e-1)

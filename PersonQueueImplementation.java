@@ -1,37 +1,36 @@
 public class PersonQueueImplementation implements PersonQueue {
 	
-	Person firstPerson = null;
+	public Person firstPerson;
 
 
 	public PersonQueueImplementation() {
-
+		firstPerson = null;
 	}
 
 
 	public void insert(Person person) {
-
-		if (firstPerson == null) {
-
-			firstPerson = person;
-
-			return;
-		}
-
-		Person aux = person;
-
-		while (aux.nextPerson != null) {
-
-			aux = aux.getNextPerson();
-
-		}
-
-		aux.setNextPerson(aux);
-
+		if (firstPerson != null) {
+		person.setNextPerson(firstPerson);
+	  	}
+	  	firstPerson = person;	 
 	}
 
 	public Person retrieve() {
+	  if (firstPerson == null) {
+		return null;
+	  }
+	  Person result = firstPerson;
+	  firstPerson = firstPerson.getNextPerson();
+	  return result;
 
-		return firstPerson;
+	}
+
+	public boolean isEmpty() {
+		if (firstPerson == null) {
+			return true;
+		} else {
+			return false;
+		}
 
 	}
 
